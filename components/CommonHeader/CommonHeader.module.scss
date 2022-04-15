@@ -1,0 +1,32 @@
+.header {
+  width: 100vw;
+  top: 0;
+  position: fixed;
+  padding: 0 8vw;
+}
+
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerLogo {
+  font-size: 1.2em;
+  flex: 0 0 auto;
+  // margin-left: calc(1.5em * 4 + 6vw);
+}
+
+.headerLinkList {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2vw;
+  font-size: 1.2em;
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
