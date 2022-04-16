@@ -1,3 +1,6 @@
+@import '_breakpoint';
+@import '_mixin';
+
 .indexContainer {
   height: 100vh;
   display: flex;
@@ -20,4 +23,18 @@
 
 .profileSubTitle {
   font-size: 1.5em;
+}
+
+@include mq(sm) {
+  .profileIcon {
+    border-radius: 50%;
+    max-height: 110px;
+    max-width: 110px;
+  }
+  .profileTitle {
+    font-size: 2em;
+  }
+  .profileSubTitle {
+    font-size: 1em;
+  }
 }
