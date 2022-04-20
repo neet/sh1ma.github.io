@@ -18,7 +18,6 @@ class Document extends NextDocument<Props> {
             property="og:description"
             content="こんな世界、なくなってしまえばいいのよね。"
           />
-          <title>sh1ma.dev</title>
           <meta name="description" content="破壊された日常" />
           <meta
             name="keywords"

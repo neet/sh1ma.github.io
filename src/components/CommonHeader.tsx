@@ -110,7 +110,7 @@ const LinksMenu = (props: LinksMenuProps) => {
       <LinksMenuMain>
         <li>
           <HeaderLinksItem>
-            <Link href="/">
+            <Link href="/" passHref>
               <div onClick={close}>Home</div>
             </Link>
           </HeaderLinksItem>
