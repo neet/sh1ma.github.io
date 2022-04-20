@@ -2,16 +2,17 @@ import type { NextPage } from 'next'
 import { useEffect, useState } from 'react'
 import { Delay } from 'utils/delay'
 import { generateCgaracterByStep } from 'utils/generateCharacterbyStep'
-import styled from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import media from 'styled-media-query'
 
-const Container = styled.div`
-  height: 100%;
+const Container = styled.main`
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
+  background-color: #7f93c4;
+  padding-top: 72px;
 `
 
 const ContentList = styled.ul`
@@ -19,17 +20,13 @@ const ContentList = styled.ul`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10vh;
-
-  ${media.lessThan('small')`
-    gap: 0;
-  `}
 `
 
 const Icon = styled.img`
   border-radius: 50%;
-  height: 220px;
-  width: 220px;
+  height: 140px;
+  width: 140px;
+  margin-bottom: 6vh;
 
   ${media.lessThan('small')`
     height: 110px;
@@ -80,7 +77,7 @@ const ProfileTitle: React.FC = (props: ProfileTitleProps) => {
 }
 
 const ProfileTitleStyled = styled(ProfileTitle)`
-  font-size: 3em;
+  font-size: 2em;
 
   ${media.lessThan('small')`
     font-size: 2em;
