@@ -109,7 +109,7 @@ const Home: NextPage = () => {
       <ContentList>
         <ContentsWrapper>
           <IconWrapper>
-            <Icon src="/anon-icon2.png" />
+            <Icon src="/icon.png" />
           </IconWrapper>
           <Names>
             <ProfileName>Kota Amasaka</ProfileName>
