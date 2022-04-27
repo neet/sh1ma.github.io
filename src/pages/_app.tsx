@@ -7,6 +7,21 @@ import 'styles/fonts.scss'
 import Head from 'next/head'
 
 const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  h1,h2,h3,h4,h5,h6{
+    font-size:100%;font-weight:normal;
+  }
+
+  #__next,
+  #__next>div {
+    height: 100%
+  }
+
   html,
   body {
     overflow: hidden;
@@ -22,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
       Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
       Helvetica Neue, sans-serif;
 
-    background-color: #7f93c4;
+    background-color: #36393f;
     color: #f4f2ff;
 
   }
