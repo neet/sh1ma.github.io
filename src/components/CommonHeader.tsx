@@ -45,7 +45,7 @@ const HeaderLinks = styled.ul`
 `
 
 const HeaderLinksItem = styled.li`
-  font-size: 1.2em;
+  font-size: 16px;
 `
 
 const LinksMenuContainer = styled.div`
