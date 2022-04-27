@@ -11,15 +11,15 @@ type PropsWithClassName = {
 }
 
 const Header = styled.nav`
-  width: 100vw;
-  position: fixed;
+  width: 100%;
+  position: sticky;
   top: 0;
-  height: 72px;
+  height: 54px;
   display: flex;
   justify-content: center;
   font-family: 'Roboto', -apple-system;
   z-index: 999;
-  background-color: #7f93c4; ;
+  background-color: #2f3136; ;
 `
 
 const HeaderItemList = styled.ul`
@@ -32,7 +32,7 @@ const HeaderItemList = styled.ul`
 const HeaderItem = styled.div``
 
 const HeaderLogo = styled.div`
-  font-size: 1.2em;
+  font-size: 16px;
 `
 
 const HeaderLinks = styled.ul`

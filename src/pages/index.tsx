@@ -1,107 +1,142 @@
 import type { NextPage } from 'next'
-import { useEffect, useState } from 'react'
-import { Delay } from 'utils/delay'
-import { generateCgaracterByStep } from 'utils/generateCharacterbyStep'
-import styled, { createGlobalStyle } from 'styled-components'
-import media from 'styled-media-query'
+import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCalendarDay, faLink } from '@fortawesome/free-solid-svg-icons'
+import Link from 'next/link'
 
 const Container = styled.main`
-  height: 100vh;
+  position: relative;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #7f93c4;
-  padding-top: 72px;
+  background-color: #2f3136;
 `
 
-const ContentList = styled.ul`
+const ContentList = styled.div`
+  font-family: 'Noto Sans JP', Roboto;
+  display: flex;
+  justify-content: center;
+  height: 40%;
+  width: 100%;
+  background-color: #7f93c4;
+  border-radius: 8px;
+  max-height: 250px;
+  max-width: 380px;
+`
+
+const ContentsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 90%;
+  height: 100%;
+`
+
+const IconWrapper = styled.div`
+  position: relative;
+  height: 10%;
+  width: 100%;
+  margin-top: -10%;
+  margin-bottom: 50px;
 `
 
 const Icon = styled.img`
+  position: absolute;
+  top: 0%;
+  left: 0;
+  bottom: 0;
+  margin: 0 auto auto auto;
   border-radius: 50%;
-  height: 140px;
-  width: 140px;
-  margin-bottom: 6vh;
-
-  ${media.lessThan('small')`
-    height: 110px;
-    width: 110px;
-    margin-bottom: 10vh;
-  `}
+  height: 80px;
+  width: 80px;
+  box-shadow: 0 0 0 4px #7f93c4;
 `
 
-const Titles = styled.div`
+const Names = styled.div`
   display: flex;
   flex-direction: column;
+  padding-bottom: 5%;
+`
+
+const ProfileName = styled.h2`
+  font-size: 20px;
+  /* text-align: center; */
+`
+
+const IdlikeName = styled.h4`
+  font-size: 14px;
+  opacity: 50%;
+`
+
+const Bio = styled.div`
+  font-size: 16px;
+  font-family: 'Noto Sans JP', Roboto;
+  padding-bottom: 5%;
+`
+
+const Other = styled.div`
+  display: flex;
+  flex-direction: column;
+  opacity: 50%;
+  padding-bottom: 2%;
+`
+
+const OtherItem = styled.div`
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+`
+
+const OtherItemIcon = styled.div`
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2vh;
-
-  ${media.lessThan('small')`
-    gap: 0;
-  `}
+  font-size: 14px;
+  padding-right: 10px;
+  height: 20px;
+  width: 20px;
 `
 
-type ProfileTitleProps = {
-  className?: string
-}
-
-const ProfileTitle: React.FC = (props: ProfileTitleProps) => {
-  const names = ['talka', 'Toka Takatsukasa', 'Kota Amasaka', 'sh1ma']
-  const [name, setName] = useState('')
-
-  const setNameWithDelay = async (name: string, seconds: number) => {
-    return new Promise((resolve) => {
-      setTimeout(() => resolve(setName(name)), 1000 * seconds)
-    })
-  }
-
-  useEffect(() => {
-    const changeName = async () => {
-      for (let i = 0; names.length > i; i++) {
-        for await (const currentName of generateCgaracterByStep(names[i])) {
-          await setNameWithDelay(currentName, 0.06)
-        }
-        await Delay(1)
-      }
-    }
-    changeName()
-  }, [])
-
-  return <div className={props.className}>I&apos;m {name}</div>
-}
-
-const ProfileTitleStyled = styled(ProfileTitle)`
-  font-size: 2em;
-
-  ${media.lessThan('small')`
-    font-size: 2em;
-    padding-bottom: 2vh;
-  `}
-`
-
-const ProfileSubTitle = styled.div`
-  font-size: 1.5em;
-
-  ${media.lessThan('small')`
-    font-size: 1em;
-  `}
+const OtherItemLabel = styled.span`
+  font-family: 'Noto Sans JP', Roboto;
+  font-size: 14px;
 `
 
 const Home: NextPage = () => {
   return (
     <Container>
       <ContentList>
-        <Icon src="/anon-icon2.png" />
-        <Titles>
-          <ProfileTitleStyled />
-          <ProfileSubTitle>Menhera SoftWare Engineer</ProfileSubTitle>
-        </Titles>
+        <ContentsWrapper>
+          <IconWrapper>
+            <Icon src="/anon-icon2.png" />
+          </IconWrapper>
+          <Names>
+            <ProfileName>Kota Amasaka</ProfileName>
+            <IdlikeName>@sh1ma</IdlikeName>
+          </Names>
+          <Bio>
+            メンヘラプログラマの21歳です。座右の銘は「破壊された日常」です。
+          </Bio>
+          <Other>
+            <OtherItem>
+              <OtherItemIcon>
+                <FontAwesomeIcon icon={faLink} />
+              </OtherItemIcon>
+              <Link href={'/about'} passHref>
+                <OtherItemLabel>sh1ma.dev/about</OtherItemLabel>
+              </Link>
+            </OtherItem>
+            <OtherItem>
+              <OtherItemIcon>
+                <FontAwesomeIcon icon={faCalendarDay} />
+              </OtherItemIcon>
+              <OtherItemLabel>
+                中学生の頃からプログラミングを始めています
+              </OtherItemLabel>
+            </OtherItem>
+          </Other>
+        </ContentsWrapper>
       </ContentList>
     </Container>
   )
