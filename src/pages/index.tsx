@@ -103,6 +103,10 @@ const OtherItemLabel = styled.span`
   font-size: 14px;
 `
 
+const OtherItemLink = styled(OtherItemLabel)`
+  color: #abe6e6;
+`
+
 const Home: NextPage = () => {
   return (
     <Container>
@@ -124,7 +128,7 @@ const Home: NextPage = () => {
                 <FontAwesomeIcon icon={faLink} />
               </OtherItemIcon>
               <Link href={'https://twitter.com/altalkalta'} passHref>
-                <OtherItemLabel>https://twitter.com/altalkalta</OtherItemLabel>
+                <OtherItemLink>https://twitter.com/altalkalta</OtherItemLink>
               </Link>
             </OtherItem>
             <OtherItem>

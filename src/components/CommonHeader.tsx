@@ -32,7 +32,7 @@ const HeaderItemList = styled.ul`
 const HeaderItem = styled.div``
 
 const HeaderLogo = styled.div`
-  font-size: 16px;
+  font-size: 20px;
 `
 
 const HeaderLinks = styled.ul`
@@ -124,7 +124,7 @@ const LinksMenu = (props: LinksMenuProps) => {
         </li>
         <li>
           <HeaderLinksItem>
-            <a href="/https://scrapbox.io/talka-memo/">
+            <a href="https://scrapbox.io/talka-memo/">
               <div onClick={close}>Scrapbox</div>
             </a>
           </HeaderLinksItem>
