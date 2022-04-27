@@ -123,8 +123,8 @@ const Home: NextPage = () => {
               <OtherItemIcon>
                 <FontAwesomeIcon icon={faLink} />
               </OtherItemIcon>
-              <Link href={'/about'} passHref>
-                <OtherItemLabel>sh1ma.dev/about</OtherItemLabel>
+              <Link href={'https://twitter.com'} passHref>
+                <OtherItemLabel>https://twitter.com</OtherItemLabel>
               </Link>
             </OtherItem>
             <OtherItem>
